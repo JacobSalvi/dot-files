@@ -48,7 +48,7 @@ dap.configurations.python = {
 }
 
 
-dap.adapters.codelldb = {
+dap.adapters.lldb = {
     type = 'server',
     port = "${port}",
     executable = {

@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- delete single character without copying into register
+keymap.set({'n', 'v'}, 'd', '"_d', { noremap = true })
+keymap.set('n', 'dd', '"_dd', { noremap = true })
 keymap.set("n", "x", '"_x')
 
 keymap.set("n","o","o<ESC>")

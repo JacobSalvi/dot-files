@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
   use('mfussenegger/nvim-dap')
     use({'rcarriga/nvim-dap-ui', requires = {"nvim-neotest/nvim-nio"}})
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-     require("toggleterm").setup()
+        require("toggleterm").setup()
     end}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
