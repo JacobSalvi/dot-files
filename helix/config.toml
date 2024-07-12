@@ -1,0 +1,20 @@
+theme = "kanagawa"
+
+[editor]
+line-number = "relative"
+auto-save = true
+color-modes = true
+
+
+[editor.lsp]
+display-inlay-hints = true
+
+
+[keys.normal]
+"esc" = ["collapse_selection", ":w"]
+
+[keys.select]
+"esc" = ["collapse_selection", "normal_mode", ":w"]
+
+[keys.insert]
+"esc" = ["normal_mode", ":w"]
