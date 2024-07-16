@@ -4,7 +4,7 @@ theme = "kanagawa"
 line-number = "relative"
 auto-save = true
 color-modes = true
-
+true-color = true
 
 [editor.lsp]
 display-inlay-hints = true
@@ -18,3 +18,10 @@ display-inlay-hints = true
 
 [keys.insert]
 "esc" = ["normal_mode", ":w"]
+
+# config.toml
+[keys.normal."'"]
+y = ":sh zellij run --floating -n 'yazi picker' --width 80% -x 10% --height 80% -y 10% -- /home/jacob/.config/helix/open_in_helix_from_yazi.sh"
+
+[keys.normal."t"]
+f = ":sh zellij run --floating -n 'yazi picker' --width 80% -x 10% --height 80% -y 10% -- bash"
