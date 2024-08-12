@@ -5,6 +5,7 @@ line-number = "relative"
 auto-save = true
 color-modes = true
 true-color = true
+bufferline = "always"
 
 [editor.lsp]
 display-inlay-hints = true
