@@ -1,0 +1,181 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* import css definitions for current theme */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+    70% {
+        color: @wm_icon_bg;
+    }
+
+    to {
+        color: @wm_icon_bg;
+        background-color: @warning_color;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+        color: @wm_icon_bg;
+    }
+
+    to {
+        color: @wm_icon_bg;
+        background-color: @error_color;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: "JetBrainsMono Nerd Font", "Roboto Mono", sans-serif;
+}
+
+/* The whole bar */
+window#waybar {
+    background: #2F2F2F;
+    color: @wm_icon_bg;
+    font-size: 14px;
+}
+
+/* Each module */
+#costum-power,
+#custom-pacman,
+#battery,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#temperature,
+#custom-playerctl,
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#clock {
+    border-top: 3px solid #B557FF;
+    color: white;
+    background-color: #0A0A0A;
+}
+
+#custom-power {
+    background-color: #0A0A0A;
+    border-radius: 0px;
+    border-top: 3px solid #B557FF;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#cpu{
+    background-color: #232323;
+    border-top: 3px solid #00FF00;
+}
+
+#cpu.warning {
+    color: @warning_color;
+}
+
+#cpu.critical {
+    color: @error_color;
+}
+
+#memory {
+    background-color: #232323;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-top: 3px solid #4169E1; 
+}
+
+#memory.low{
+    color: white;
+}
+
+#memory.medium{
+    color: #7FFFD4;
+}
+
+#memory.warning {
+    color: @warning_color;
+}
+
+#memory.critical {
+    color: @error_color;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#mode {
+    background: @background_color;
+}
+
+#tray{
+    background-color: #0A0A0A;
+    border-top: 3px solid #EEE8AA;
+}
+
+#pulseaudio{
+    background-color: #0A0A0A;
+    border-top: 3px solid #EEE8AA;
+}
+
+#pulseaudio.muted {
+    color: @warning_color;
+}
+
+#temperature {
+    background-color: #232323;
+    border-top: 3px solid #F08080;
+}
+
+
+#temperature.critical {
+    color: @error_color;
+}
+
+
+#custom-pacman {
+    color: @warning_color;
+    background-color: #0A0A0A;
+    border-top: 3px solid #EEE8AA;
+ }
+
+#tags button {
+    color: white;
+    background-color: #232323;
+    border-top: 3px solid #E5A3FF;
+}
+
+#tags button.focused {
+    background-color: #0A0A0A;
+    border-top: 3px solid #B557FF;
+}
+
+#custom-playerctl{
+    background-color: #0A0A0A;
+    border-top: 3px solid #EEE8AA;
+}
