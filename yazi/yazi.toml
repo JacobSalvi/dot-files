@@ -2,3 +2,6 @@
 edit = [
 	{ run = 'zellij run -- hx "$@"', block = true },
 ]
+
+[flavor]
+use = "kanagawa"
