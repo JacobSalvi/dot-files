@@ -1,0 +1,15 @@
+alias update="sudo pacman -Syu"
+alias install="sudo pacman -Sy"
+
+alias npmPurge="rm -r node_modules && rm package-lock.json"
+alias copy="cp"
+alias move="mv"
+alias remove="rm"
+
+alias gst="git status"
+alias gsw="git switch"
+alias gswc="git switch --create"
+alias switch_to_en="riverctl keyboard-layout us"
+alias switch_to_dvp="riverctl keyboard-layout -variant dvp -options caps:escape us"
+
+alias hx="helix"
