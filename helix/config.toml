@@ -20,8 +20,30 @@ display-inlay-hints = true
 [keys.insert]
 "esc" = ["normal_mode", ":w"]
 
+[keys.normal.space]
+f = "file_picker_in_current_directory"
+F = "file_picker"
+
 # config.toml
 [keys.normal."'"]
-y = ":sh zellij run --floating -n 'yazi picker' --width 80% -x 10% --height 80% -y 10% -- /home/ubuntu/.config/helix/open_in_helix_from_yazi.sh"
+y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+# ":sh zellij run --floating -n 'yazi picker' --width 80% -x 10% --height 80% -y 10% -- /home/ubuntu/.config/helix/open_in_helix_from_yazi.sh"
 
 f = ":sh zellij run --floating -n 'Terminal' --width 80% -x 10% --height 80% -y 10% -c -- bash"
+
+r = ":reset-diff-change"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["version-control","spacer", "diagnostics", "selections", "position", "file-encoding", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
