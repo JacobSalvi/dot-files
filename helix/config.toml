@@ -33,11 +33,16 @@ y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
-# ":sh zellij run --floating -n 'yazi picker' --width 80% -x 10% --height 80% -y 10% -- /home/ubuntu/.config/helix/open_in_helix_from_yazi.sh"
 
 f = ":sh zellij run --floating -n 'Terminal' --width 80% -x 10% --height 80% -y 10% -c -- bash"
 
 r = ":reset-diff-change"
+
+l = [
+  ':insert-output lazygit',
+  ':redraw',
+]
+
 
 [editor.statusline]
 left = ["mode", "spinner"]
